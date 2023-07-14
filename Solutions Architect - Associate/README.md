@@ -45,3 +45,12 @@ Serviços da AWS utilizados para Identity and access management:
 - AWS Directory Service
 - IAM
 - Single sign on 
+
+
+#### Controles de detecção
+Serviços AWS para controle de detecção:
+- AWS Security Hub
+- Amazon Guard Duty
+- Amazon Inspector
+- Amazon detective
+- Amazon macie
