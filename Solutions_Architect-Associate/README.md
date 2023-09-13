@@ -96,7 +96,7 @@ Provem às aplicações melhores segurança, disponibilidade, performance e moni
 
 ##### Networkd design patterns 
 
-![topologias-rede](topologias-rede.png)
+![topologias-rede](img/topologias-rede.png)
 
 1. Conexão privada de dados, que conectam 2 ou mais localidades. É um tipo de rede fechada e não faz face com a internet pública.
 
@@ -204,7 +204,7 @@ Vai da layer 4 a 7, essa é onde seu dado é "quebrado" para transporte e "monta
 Vai da layer 1 a 3, define como o dado se move entre o ponto A e o ponto B, o ponto A pode ser sua rede local e o ponto B também ou B poderia ser na internet.
 
 
-![OSI](osi.png)
+![OSI](img/osi.png)
 
 
 
