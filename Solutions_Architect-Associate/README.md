@@ -154,7 +154,58 @@ Dependem de criptografia para manter os dados seguros.
 
 ##### Protocolos comuns na AWS
 - IPv4
-Números de 32-bits, num range de 0 a 255 separados por "."
+Números de 32bits, num range de 0 a 255 separados por "."
 Inicia com 0.0.0.0 até 255.255.255.255
- 
+
+- IPv6
+Números de 128bits
+A principal diferença entre os dois é que o IPv6 provê um grande espaço de endereços e tem um header simplificado em comparação ao IPv4
+
+- CIDR
+CIDR provê uma representação numérica de uma rede que descreve suas caracteristicas e mask length que determina os endereços utilizáveis incluindo o endereço de inicio e fim
+
+
+- Subnetting
+É o processo de dividira rede em menores seções de rede.
+Subnet é uma organização logica de aparelhos conectados.
+São eficientes pois diminuem o o tempo de "viagem" passando por roteadores desnecessários para chegar ao destino.
+
+- Subnet mask
+É usado dentro de uma rede para determinar se um host está na subnet local ou remota.
+
+
+##### Accessing data
+* Network arrached storage (NAS) - se conecta com um armazenamento compartilhado entre toda a rede, normalmente armazenado num data-center e da acessos a nível de arquivo.
+
+Na AWS poderia ser utilizado Elastic File System (EFS) ou Amazon FSx.
+
+
+* Storage area network (SAN) - adiciona nível de acesso em bloco, na AWS utilizaria o Elastic Block Store (EBS).
+
+
+#### AWS Implementation
+Local network ->
+Open systm interconnect (OSI) model
+7 camadas >
+1. Física
+2. Data link
+3. Network
+4. Transporte
+5. Sessão
+6. Presentations
+7. Aplicação
+
+
+OSI pode ser agrupado em 
+> Host layers
+Vai da layer 4 a 7, essa é onde seu dado é "quebrado" para transporte e "montado" no destino.SS
+
+> Media layers
+Vai da layer 1 a 3, define como o dado se move entre o ponto A e o ponto B, o ponto A pode ser sua rede local e o ponto B também ou B poderia ser na internet.
+
+
+![OSI](osi.png)
+
+
+
 
