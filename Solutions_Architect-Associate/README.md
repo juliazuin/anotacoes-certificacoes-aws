@@ -225,9 +225,9 @@ A principal diferença entre os dois modelos é os protocolos TCP/IP estabelecem
 
 ##### OSI na AWS
 | OSI layer   | AWS                                                                      | Descrição                                        |
+| ----------- | ------------------------------------------------------------------------ | ------------------------------------------------ |
 | Física      | Direct Connect                                                           | é a infra física da AWS e gerenciada pela AWS    |
-| Data Link   | AWS 
-CLI                                                                  | O software q permite q o hardware seja utilizado |
+| Data Link   | AWS CLI                                                                  | O software q permite q o hardware seja utilizado |
 | Network     | Cloud WAN,  Private Link, routes e route tables,Transit Gateway          | Layer de gerenciamento                           |
 | Transporte  | S3, Lambda, RDS, EC2, Securitu groups, firewalls, Elastic Load balancer  | Camada de serviço                                | 
 | Application | WAF, API Gateway, Cloud Map, Route53, CloudFrount                        | Fazem face com o usuario                         |
