@@ -1,4 +1,6 @@
-#### IAM - Basico
+### IAM
+
+##### IAM - Basico
 autorização = o que esse usuario pode fazer/acessar?
 
 autenticação = quem é essa pessoa
@@ -21,7 +23,7 @@ AWS contém 2 tipos de endpoint acessíveis ao usuário:
 - API de consulta - access_key e secret_access_key
 
 
-#### AWS Security, Identity, and Compliance
+##### AWS Security, Identity, and Compliance
 
 A segurança é a prática de proteger sua propriedade intelectual contra acesso, uso ou modificação não autorizados. 
 
@@ -47,7 +49,7 @@ Serviços da AWS utilizados para Identity and access management:
 - Single sign on 
 
 
-#### Controles de detecção
+##### Controles de detecção
 Serviços AWS para controle de detecção:
 - AWS Security Hub
 - Amazon Guard Duty
@@ -56,7 +58,7 @@ Serviços AWS para controle de detecção:
 - Amazon macie
 
 
-#### Network
+### Network
 
 Network services by group:
 
@@ -260,4 +262,30 @@ Também pode ser utilizado para conectar ambientes on-premisses a AWS
 Ofereça conexão privada entre VPCS, serviços AWS e ambientes on-premisses
 também conecta diferentes contas.
 
+
+
+#### Conceitos de conectividade
+
+* Multi-tier architecture -> agrupamento de varios componentes de software por função em camadas ou tiers, não existe limite parao numero de camadas, mas as mais comuns são:
+1. Presentation tier
+2. Application or logic tier
+3. Data tier
+
+funciona como um escudo contra ameaças e aumenta a disponibilidade das soluções
+
+
+* Multi-VPC architecture
+Permitir trafego entre multiplas VPCs
+
+
+* High availability
+Rede desenhada para evitar a perda de comunicação entre um trafego ja pré estabelecido
+
+ 
+* Hybrid network
+Permitir conectividade entre cloud e ambientes on-premisses
+
+
+* High performance
+Transferencia de dados pelo menor caminho, com o minimo de delay possível
 
