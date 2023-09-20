@@ -233,3 +233,31 @@ A principal diferença entre os dois modelos é os protocolos TCP/IP estabelecem
 | Application | WAF, API Gateway, Cloud Map, Route53, CloudFrount                        | Fazem face com o usuario                         |
 
 
+#### AWS VPCs 
+Componentes da VPC
+- CIDR
+- Subnets
+- EC2
+- Routing
+- Route tables
+- Internet gateway
+- Network access control list
+- Security groups
+
+
+#### VPC Peering
+Uma forma de linkar multiplos VPCs permitindo, assim, comunicação direta entre duas VPCs distintas utilizando IPs privados.
+Não é um modelo escalável, é um modelo que funciona bem nos casos de conexão 1:1
+
+##### AWS Transit Gateway
+Cria uma conexão de 1:N atraves de um "central hub".
+Tem escalabilidade, conectividade, melhor visibilidade e controle e segurança melhorada quando comparada com peering.
+
+Também pode ser utilizado para conectar ambientes on-premisses a AWS
+
+
+##### AWS Private link
+Ofereça conexão privada entre VPCS, serviços AWS e ambientes on-premisses
+também conecta diferentes contas.
+
+
