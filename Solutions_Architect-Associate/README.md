@@ -289,3 +289,54 @@ Permitir conectividade entre cloud e ambientes on-premisses
 * High performance
 Transferencia de dados pelo menor caminho, com o minimo de delay possível
 
+Uma VPC padrão é configurada com:
+1. Um bloco CIDR IPv4 /16 (até 65.536 endereços IPv4 privados)
+2. Uma sub rede padrão /20 (até 4096 endereços disponiveis por sub rede) para as zonas de disponibilidade da região
+3. Um gateway de internet
+4. Uma rota padrão para o gatewqy da internet
+5. Um security group padrão
+6. Uma ACL de rede padrão
+7. Um conjunto de opções Dynamic Host Configuration Protocol (DHCP)
+
+
+#### Alta disponibilidade
+
+1. Elastic Load Balancer
+Usado pra distribuir conexões de entrada em um grupo de servidores ou serviços como EC2, containers, endereços de ip, funções lambda e dispositivos virtuais.
+
+LB são otimos com auto scale groups (ASG).
+
+Tipos de LB:
+1. Classic load balancer
+
+2. Appliaction load balancer
+Conhecido por balancear carga da camada 7 do modelo de OSI (ultima camada, front com usuário), pode inspecoinar os dados q são passados por ele e pode entender a aplicação -> http e https
+Pode ser voltado pra internet ou interno, se for para internet = IP público e são utilizados para se conectar a internet com destino às instancias, e se não IP = privado e são utilizados para equilibrar carga dentro do VPC ou entre as camadas de uma aplicação.
+
+
+3. Network load balancer
+Podem alocar endereços de IP estáticos e tem suporte a uso de aplicações em containers.
+
+
+4. Gateway load balancer
+Permitem implantar, dimensionar e gerenciar dispositivos virtuais como firewalls sistemasde detecção e prevenção de invasões e sistemas de inspeção profuda de pacotes.
+Combina comum gateway de rede (unico ponto de entrada e saída para todo tráfego) e distribui carga enquanto escala os dispositivos com a demanda.
+Opera na 3a camada do modelo OSI, camada de rede
+
+
+##### AWS Cloud Adoption Framework (CAF)
+- IAM - controlar permissões
+- Controle de detetive -  reduzir prefil de risco do seu ambiente
+- Segurança de infraestrutura - automentar privacidade e controle da sua infra
+- Proteção de dados - proteção de dados em trânsito e em repouso
+- Reposta a incidentes - planejamento para incidentes de segurança
+
+
+Arquitetura de varios niveis?
+1. VPC  de nível unico
+pode ser utilizado se -> sua aplicação não usa dados privados;
+-> pode ficar indisponível por longos períodos de tempo
+-> só será usado por você
+
+
+2. VPC de N níveis:
