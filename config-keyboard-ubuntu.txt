@@ -1,0 +1,23 @@
+[ Passo a passo ]
+1 - Abrir o terminal (ctrl+alt+t)
+2 - sudo pip3 install avell-unofficial-control-center
+3 - whoami (verificar o nome do usuário)
+4 - which aucc (verificar a localização do "aucc")
+5 - sudo visudo
+6 - Adicionar o comando:
+nomedousuario ALL = NOPASSWD: localizaçãodoAUCC
+(Exemplo: davide ALL = NOPASSWD: /usr/local/bin/aucc)
+7 - Salvar e fechar ( Ctrl+X )
+8 - Abrir o "Aplicativos iniciais de sessão" (disponível no menu do gnome)
+9 - Adicionar um novo programa com o seguinte comando:
+sudo aucc -c green -b 4
+(Obs.: "green" é a cor deseja e "4" é a intensidade do brilho, de acordo com a documentação do driver)
+10 - Fechar o "Aplicativos iniciais de sessão"
+11 No terminal, execute o seguinte comando:
+sudo nano ~/.config/autostart/gedit.desktop
+(Obs.: Se o arquivo "gedit.desktop" não existir crie um novo com esse mesmo nome, se ele já existir apenas edite ele adicionando o comando descrito.)
+12- Adicionar o seguinte comando:
+X-GNOME-Autostart-Delay=15
+(Obs.: Esse comando tem a função de aguardar 15 segundos após a inicialização).
+13- Salvar e fechar o arquivo (Ctrl+X)
+14- Reiniciar o computador.
