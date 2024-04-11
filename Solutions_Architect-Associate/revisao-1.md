@@ -40,3 +40,38 @@ Exemplo: múltiplas requisições dentro de um período de 5min em uma página d
 
 
 https://aws.amazon.com/blogs/security/three-most-important-aws-waf-rate-based-rules/
+
+
+### Route 53
+É possível configurar health check do route 53 para verificar configurações ativo-ativo e ativo-passivo.
+
+### Application Discovery Service
+Coleta e apresenta a data para que seja possivel entender a configuração, uso e comportamento dos servidores no ambiente on-premisses. Dados obtidos são retidos no Application Disacovery Service e então pode ser taggeado e agrupado para facilitar um plano de migração para a cloud.analysis tools.
+
+
+Agent-based discovery -> é utilizado para coletar dados de hosts que não sejam do tipo VMWare. Podendo ser, windows, linux, ubuntu, centos e suse OS.
+
+Agentless discovery -> é utilizado somente para coletar dados de hosts que **sejam** do tipo VMWare
+
+### Security
+* GuardDuty -  protege contra o uso de crendenciais comprometidas ou acesso não usual no s3, mas não escaneia o conteúdo do bucket s3
+* Detective - analisa e visualiza informações de segurança dos serviços como o Guard Duty, Macia e Security Hub para resgatar a causa raiz de um potencial problema de segurança.
+* Macie - utiliza machine learning e correspondência de padrões  para discobrir monitorar e proteger dados sensíveis nos Buckets s3 
+* Inspector- Avalia vulnerabilidade de software ou exposições de rede nos EC2.
+
+### AWS Transfer family
+Oferecesuporte para transiferência de arquivos com SFTP, AS2, FTPS e FTP diretamente para o S3 ou EFS.
+
+SFTP - Secure Shell (SSH) file transfer protocol - protocolo de rede q é usado para transferẽncia segura de dados pela internet.
+
+AS2 - Applicabilitty Statement 2 - protocolo de redes utilizado para transferência de dados de business-to-business(B2B) num rede de internet publica com HTTP ou HTTPS (o qualquer TCP/IP protocolo)
+
+FTP - File transfer protocol - protocolo de redes utilizado para transferência de dados, utiliza um canal separado para transferências de "control" e "data", sendo "control" aberto até terminar ou até a inatividade (timeout) e o canal "data" fica ativo durante a transferência do dados. FTP não suporta criptografia dos dados.
+
+FTPS - File Transfer Protocol over SSL - é uma extensão do FTP, como ele utiliza um canal separado para transferências de "control" e "data", utiliza TLS (Transport layer security) para criptografia do tráfego sendo utilizada em ambos canais "control" e "data".
+
+### Outposts
+Permite estender e operar serviços nativos da AWS no ambiente on-premisses.
+É possível rodar alguns serviços da aws localmente e integrar com outros vários serviços disponíveis na região.
+
+
