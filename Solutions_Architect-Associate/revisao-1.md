@@ -74,4 +74,43 @@ FTPS - File Transfer Protocol over SSL - é uma extensão do FTP, como ele utili
 Permite estender e operar serviços nativos da AWS no ambiente on-premisses.
 É possível rodar alguns serviços da aws localmente e integrar com outros vários serviços disponíveis na região.
 
+### Bucket s3
+Para configurar um bucket com os arquivos estáticos de um website, esse bucket s3 deve ser público e deve-se criar uma policy com acessos de leitura. Se esse bucket contém objetos que não são do mesmo dono do bucket, por exemplo, uma outra conta AWS "pai" que também lê desse bucket s3, também deve-se criar uma ACL(access control list) para garantir o acesso.
 
+>ps. Se não quiser colocar o bucket s3 como público é possível criar um cloudfront para realizar a entrega do conteúdo estático.
+
+Presigned URL ->
+Buckets s3 podem ter URLs pré assinadas, que podem ajudar a dar acesso a um objeto específico de dentro do bucket. Essas URLs devem ter um período de expiração.
+
+
+### Polly:
+Transforma texto em uma fala, premitindo criar aplicaçoes que falam, por exemplo, bots de telemarketing.
+
+### Rekognition:
+Utiliza machine learning para identificar objetos, pessoas, textos, cenários e atividade em imagens e vídeos, etc.
+Também provê uma analise facial muito aguçada a qual é possível ser utilizada para detectar, analizar e comparar faces em vários casos de uso.
+
+### Textract: 
+Utiliza machine learning para extrair textos impressos, textos escritos à mão e outros tipos de dados de documentos escaneados.
+
+### Comprehend: 
+Entrega insights de textos, por exemplo, extrai textos, frases, tópicos e sentimentos pré ocnfigurados.
+
+### Kinesis
+É possível realizar a ingestão de dados em tempo real, como vídeo audio, logs de aplicação, cliques de websites, dados de telemetria com IoT...
+
+### Lex
+Chatbot facilitado, é uma inteligência artificial para criar uma interface de conversa numa aplicação.
+
+### Personalize 
+Integra recomendações personalizadas para cada usuário em websites, aplicações, email, sistemas de marketing, etc.
+
+
+### Timestream
+É um banco de dados que utiliza dados tipo `time-series`, que são bancos de dados baseados em tempo.
+
+### QuickSight
+Dashboard like, serviço para business analytics.
+É possível conectar os seguintes serviços ao QuickSight:
+RDS, aurora, redshoft, athena e s3.
+É possível também inputar arquivos de excel, conectar a bancos de dados on-premisses (SQL server, MySQL e PostGreSQL), importar dados de um SaaS (tipo salesforce)
