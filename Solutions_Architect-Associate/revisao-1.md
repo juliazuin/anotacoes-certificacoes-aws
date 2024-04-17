@@ -60,7 +60,7 @@ Agentless discovery -> é utilizado somente para coletar dados de hosts que **se
 * Inspector- Avalia vulnerabilidade de software ou exposições de rede nos EC2.
 
 ### AWS Transfer family
-Oferecesuporte para transiferência de arquivos com SFTP, AS2, FTPS e FTP diretamente para o S3 ou EFS.
+Oferecesuporte para transiferência de arquivos com SFTP, AS2, FTPS e FTP diretamente para o s3 ou EFS.
 
 SFTP - Secure Shell (SSH) file transfer protocol - protocolo de rede q é usado para transferẽncia segura de dados pela internet.
 
@@ -114,3 +114,8 @@ Dashboard like, serviço para business analytics.
 É possível conectar os seguintes serviços ao QuickSight:
 RDS, aurora, redshoft, athena e s3.
 É possível também inputar arquivos de excel, conectar a bancos de dados on-premisses (SQL server, MySQL e PostGreSQL), importar dados de um SaaS (tipo salesforce)
+
+
+### Metrics
+CloudWatch agent:
+Coleta informações de métricas em nível de sistema nas instâncias EC2 e on-premisses entre sistemas operacionais, as métricas coletadas pelo agent são consideradas metricas customizadas e são faturadas dessa forma.
