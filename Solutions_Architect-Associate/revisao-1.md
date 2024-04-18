@@ -74,6 +74,9 @@ FTPS - File Transfer Protocol over SSL - é uma extensão do FTP, como ele utili
 Permite estender e operar serviços nativos da AWS no ambiente on-premisses.
 É possível rodar alguns serviços da aws localmente e integrar com outros vários serviços disponíveis na região.
 
+Outposts é compatível com o ECS sendo ideal para workloads que necessitem de baixa latência e que necessitem proximidade com dadose/ou aplicações do ambiente on-premisses.
+ECS tipo Fargate não está disponpível com Outposts.
+
 ### Bucket s3
 Para configurar um bucket com os arquivos estáticos de um website, esse bucket s3 deve ser público e deve-se criar uma policy com acessos de leitura. Se esse bucket contém objetos que não são do mesmo dono do bucket, por exemplo, uma outra conta AWS "pai" que também lê desse bucket s3, também deve-se criar uma ACL(access control list) para garantir o acesso.
 
@@ -119,3 +122,30 @@ RDS, aurora, redshoft, athena e s3.
 ### Metrics
 CloudWatch agent:
 Coleta informações de métricas em nível de sistema nas instâncias EC2 e on-premisses entre sistemas operacionais, as métricas coletadas pelo agent são consideradas metricas customizadas e são faturadas dessa forma.
+
+
+### s3 <- CloudFront
+> mais recomendado OAC
+Origin Access control (OAC) - suporta criptografia server side com KMS e requisições dinamicas. 
+Origin Access Identity (OAI)
+
+### ECS
+Orqustração de containers 100% totalmente gerenciado.
+3 camadas:
+1. Capacity- a infra que roda os containers
+1.1 Instâncias EC2
+1.2 Serverless com Fargate
+1.3 Máquinas virtuais ou servidores On-premisses  
+2. Controller - deploy e gerencia as aplicações que rodam nos containers
+3. Provisionamento - ferramentas que podem ser utilizadas para fazer interface com o "agendador" para gerenciar as aplicações e os containers.
+3.1 Aws console
+3.2 AWS CLI
+3.3 SDKs
+3.4 copilot
+
+Network modes no ECS:
+Host mode: a rede do container está amarrada diretamente com o host "pai" que está rodando o container.
+
+Bridge mode: utiliza uma ponte de rede virtual que cria uma camada entre o host e a rede do container. 
+
+AWSVPC mode: cria e gerencia uma Elastic Network Interface (ENI) para cada task e cada uma dessas tasks recebem seu próprio IP privado dentro da VPC
