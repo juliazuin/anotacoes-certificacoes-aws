@@ -15,7 +15,7 @@ ClosestToNextInstanceHour – Terminate a instância que está mais proxima do h
 
 NewestInstance – Terminate a instância mais recente do grupo. Útil quando uma lauch configuração está sendo testada porém não é necessário mantê-la em produção.
 
-OldestInstance – Termina a instância mais antiga do grupo. Útel quando estamos atualizando as instâncias de um grupopara um novo tipo de EC2.2 instance type. You can gradually replace instances of the old type with instances of the new type.
+OldestInstance – Termina a instância mais antiga do grupo. Útil quando estamos atualizando as instâncias de um grupo para um novo tipo de EC2.2 instance type. You can gradually replace instances of the old type with instances of the new type.
 
 ### ENI
 Junção de várias ENIs a uma instância é útil nos casos:
@@ -140,7 +140,7 @@ Integra recomendações personalizadas para cada usuário em websites, aplicaç�
 ### QuickSight
 Dashboard like, serviço para business analytics.
 É possível conectar os seguintes serviços ao QuickSight:
-RDS, aurora, redshoft, athena e s3.
+RDS, aurora, redshift, athena e s3.
 É possível também inputar arquivos de excel, conectar a bancos de dados on-premisses (SQL server, MySQL e PostGreSQL), importar dados de um SaaS (tipo salesforce)
 
 
