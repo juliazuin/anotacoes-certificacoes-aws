@@ -19,10 +19,17 @@ Casos de uso:
 Pode ser usado para compartilhar recursos entre contas AWS
 
 
-### EFS -DataSync
+### EFS - DataSync
 Transfere dados online entre serviços, simplifica, automatiza e acelera movimentação e replicação dos dados entre sistemas de armazenamento on-premisses e também entre serviços de armazenamento da AWS
 Pode copar dados entre Network File Systems (NFS), Server Message Block (SMB) file servers, self-managed object storage, AWS Snowcone, Amazon S3 buckets, Amazon EFS file systems, and FSx for Windows File Server file systems.
 Também pode ser utilizado para transferência de dados entre EFS de regiões diferentes e EFS de contas diferentes.
+
+### Cloud Formation
+Custom Resources ->
+Permitem escrever uma lógicad e provisionament customizada nos templates do cloud formation. São utilizadas para realizar chamada a outros serviços, como lambda, para executar uma função da stack.
+
+Pode ser utilizado com o SNS no caso onde é necessário inclusão de novos recursos em uma stack existente ou injetar recursos dinâmicos na stack
+
 
 
 
