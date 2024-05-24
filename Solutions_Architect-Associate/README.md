@@ -200,29 +200,13 @@ Open systm interconnect (OSI) model
 
 OSI pode ser agrupado em 
 > Host layers
-Vai da layer 4 a 7, essa é onde seu dado é "quebrado" para transporte e "montado" no destino.SS
+Vai da layer 4 a 7, essa é onde seu dado é "quebrado" para transporte e "montado" no destino.
 
 > Media layers
 Vai da layer 1 a 3, define como o dado se move entre o ponto A e o ponto B, o ponto A pode ser sua rede local e o ponto B também ou B poderia ser na internet.
 
 
 ![OSI](img/osi.png)
-
-
-#### TCP/IP
-> Transmission Control Protocol/Internet protocol model
-
-
-É um conjunto de protocolos de comunicação usado para conectar aparalhos na internet.
-O modelo TCP/IP foi desenhado para protocolos padrão que são uma subsessão do modelo de OSI.
-
-1. Link
-2. Internet
-3. Transport
-4. Application
-
-
-A principal diferença entre os dois modelos é os protocolos TCP/IP estabelecem padrões sobre os quais a Internet foi criada, enquanto o modelo OSI fornece diretrizes sobre comunicação.
 
 
 ##### OSI na AWS
@@ -233,6 +217,18 @@ A principal diferença entre os dois modelos é os protocolos TCP/IP estabelecem
 | Network     | Cloud WAN,  Private Link, routes e route tables,Transit Gateway          | Layer de gerenciamento                           |
 | Transporte  | S3, Lambda, RDS, EC2, Securitu groups, firewalls, Elastic Load balancer  | Camada de serviço                                | 
 | Application | WAF, API Gateway, Cloud Map, Route53, CloudFrount                        | Fazem face com o usuario                         |
+
+#### TCP/IP
+> Transmission Control Protocol/Internet protocol model
+É um conjunto de protocolos de comunicação usado para conectar aparalhos na internet.
+O modelo TCP/IP foi desenhado para protocolos padrão que são uma subsessão do modelo de OSI.
+
+1. Link
+2. Internet
+3. Transport
+4. Application
+
+A principal diferença entre os dois modelos é os protocolos TCP/IP estabelecem padrões sobre os quais a Internet foi criada, enquanto o modelo OSI fornece diretrizes sobre comunicação.
 
 
 #### AWS VPCs 
