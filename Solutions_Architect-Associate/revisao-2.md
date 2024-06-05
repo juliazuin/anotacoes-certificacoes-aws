@@ -43,7 +43,22 @@ Transit Gateway - conecta VPCs (virtual private clouds) e redes on-premisses por
 
 *VPN*
 Roteamento ECMP -  estratégia utilizada em redes para distribuir tráfego entre vários caminhos de mesmo custo (têm a mesma métrica ou distância de roteamento) simultâneamente. Benefícios: melhora performanceda rede, aumenta a largura de banda (bandwidth) e aumenta a tolerância a falhas.
-Na AWS pode ser utilizado para criação de multiplas conexões VPN site-to-site,aumentando assm a larguda de banda da conexão entre o ambiente on-premissese a AWS
+Na AWS pode ser utilizado para criação de multiplas conexões VPN site-to-site,aumentando assm a larguda de banda da conexão entre o ambiente on-premissese a AWS.
+
+
+*IPs* 
+IPs não roteaveis são IPs deinifidos na RFC1918 que são determinados para conexões privadas, são eles:
+
+* 10.0.0.0 – 10.255.255.255 (10.0.0.0/8)
+* 172.16.0.0 – 172.31.255.255 (172.16.0.0/12)
+* 192.168.0.0 – 192.168.255.255 (192.168.0.0/16)
+
+
+### NAT Gateway
+Publica - pode ser utilizada para prover conectividade entre recursos AWS numa subnet privada e a internet ou redes externas. Precisam necessáriamente ser posicionadas numa subnet pública e um elastic IP precisa ser associado à ela.
+
+Privada - Pode ser usada para prover conectividade com recursos on-premisses ou outras VPCs (com subnets privadas). o Elastic IP não precisa ser associado a um NAT gateway privado
+
 
 
 
