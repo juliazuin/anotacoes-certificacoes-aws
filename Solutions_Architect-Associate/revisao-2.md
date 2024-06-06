@@ -60,9 +60,10 @@ Publica - pode ser utilizada para prover conectividade entre recursos AWS numa s
 Privada - Pode ser usada para prover conectividade com recursos on-premisses ou outras VPCs (com subnets privadas). o Elastic IP não precisa ser associado a um NAT gateway privado
 
 
-
-
-
+### Storage
+Glacier - Vault Lock Policies - O s3 glacier pode ter uma vault access policy baseada em recursos e uma vault *lock* policy anexada à ela.
+Uma vault *lock* policy é uma política de acesso a qual é possível "trancar", utilizando essa policy é possível reforçar politicas de compliance e regulatórias.
+exemplo: É necessário reter arquivos durante um ano antes que possam ser deletados, com a essa policy é possível negar a deleção desses arquivos ate que tenham existido por um ano. É possível testar a policy antes de aplicar o "lock, pois depois ela se torna imutável 
 
 
 

@@ -96,7 +96,7 @@ Provem às aplicações melhores segurança, disponibilidade, performance e moni
 
 #### Conceitos de redes
 
-##### Networkd design patterns 
+##### Networkd design patterns Direct
 
 ![topologias-rede](img/topologias-rede.png)
 

@@ -119,7 +119,7 @@ Utiliza machine learning para extrair textos impressos, textos escritos à mão 
 
 
 ### Comprehend: 
-Entrega insights de textos, por exemplo, extrai textos, frases, tópicos e sentimentos pré ocnfigurados.
+Entrega insights de textos, por exemplo, extrai textos, frases, tópicos e sentimentos pré configurados.
 
 ### Kinesis
 É possível realizar a ingestão de dados em tempo real, como vídeo audio, logs de aplicação, cliques de websites, dados de telemetria com IoT...
