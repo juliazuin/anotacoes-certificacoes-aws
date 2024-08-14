@@ -9,7 +9,7 @@ Aplicações orientadas a eventos
 Ajuda a criar integrações entre eventos `producers` e `consumers`, pode filtrar transformar e enriquecer o evento.
 Casos de uso:
 * Alterações no DynamoDb podem ser integradas com o eventbridge pipes para serem dissipadas em múltiplas opções de aṕlicações na AWS.
-* É possível mover dados de um kafka hospedado no on-premisses para kineses data, por exemplo.
+* É possível mover dados de um kafka hospedado no on-premisses para kinesis data, por exemplo.
 * É possível complementar os dados enviados para um sofware realizando chamadas de API no "meio do caminho" para enriquecer os dados.
 
 #### Scheduler
@@ -67,4 +67,45 @@ exemplo: É necessário reter arquivos durante um ano antes que possam ser delet
 
 
 
+### Kinesis
+Consegue processar e analisar dados de streaming (Dados de streaming são dados que são gerados continuamente por diferentes fontes. Esses dados devem ser processados ​​de forma incremental usando técnicas de processamento de fluxo sem ter acesso a todos os dados.).
+Com ele é possível ingerir dados em tempo real como video, áudio, logs de aplicação, dados de telemetria IoT, etc.
 
+Data firehose: utilizado para fazer ETL de vários recursos da AWS e armazenar num s3 ou redshift.. mas não captura dados de streaming de vídeos como câmeras de sgurança.
+
+Data analytics: utilizado para agrupar dados de streaming que vem do kinesis data streams, s3, aparelhos IoT. Analisa o dado com queries e manda o output para outros serviços da AWS ou ferramentas analiticas. Esse output que pode ser utilizado para criação de alertas ou respostas em tempo real.
+
+Vídeo streams: criado expecificamente para casos de uso como playback de vídeo, detecção de rostos, monitorações de segurança.
+
+Data streams: útil para capturar vários GBs de dado em tempo real de vários recursos, esse dado pode ser utilizado posteriormente pelo data analytcs, amazon EMR.
+
+### Route53
+- Alias records:
+Um registro de alias só pode redirecionar queris para recursos selecionados da AWS, s3, cloudfront, outro registro na mesma `hosted zone` do route53
+exemplo: é possível criar um registro tipo alias chamado "acme.example.com" que redireciona as chamadas para um bucket s3. Também é possível criar esse mesmo alias que redireciona as chamadas para "zenith.example.com" dentro da hosted zone example.com
+
+- CNAME records: 
+Pode redirecionar qualquer chamada DNS para qualquer registro de DNS.
+exemplo: é possível criar um registro CNAME que redireciona chamadas de "acme.example.com" pra "zenith.example.com" ou "acme.example.org", não é necessário que o outro registro de DNS esteha dentro do route53
+
+most common records supported in Route 53 are:
+● A: hostname to IPv4
+● AAAA: hostname to IPv6
+● CNAME: hostname to hostname
+● Alias: hostname to AWS resource
+
+
+### Autenticação e permissão
+IAM policies são mais comuns e abrangentes, são usadas para gerenciar acesso a maioria dos serviços da AWS, controlam acessos de usuário, grupos ou roles podem executar mvarios serviços.
+São centralizadas e aplicáveis em nível de identidade.
+
+Resource based policies, alguns recursos permitem o uso desse tipo de política, como:
+
+S3
+SQS
+SNS
+KMS
+Lambda  
+S3 Glacier
+API Gateway
+CloudWatch logs
