@@ -61,9 +61,14 @@ Privada - Pode ser usada para prover conectividade com recursos on-premisses ou 
 
 
 ### Storage
-Glacier - Vault Lock Policies - O s3 glacier pode ter uma vault access policy baseada em recursos e uma vault *lock* policy anexada à ela.
+#### Glacier 
+Vault Lock Policies - O s3 glacier pode ter uma vault access policy baseada em recursos e uma vault *lock* policy anexada à ela.
 Uma vault *lock* policy é uma política de acesso a qual é possível "trancar", utilizando essa policy é possível reforçar politicas de compliance e regulatórias.
 exemplo: É necessário reter arquivos durante um ano antes que possam ser deletados, com a essa policy é possível negar a deleção desses arquivos ate que tenham existido por um ano. É possível testar a policy antes de aplicar o "lock, pois depois ela se torna imutável 
+
+
+#### EBS
+É possível utilizar o EBS em modo "multi-attach" que permite acoplar um único volume IOPS SSD em várias instancias ec2
 
 
 
