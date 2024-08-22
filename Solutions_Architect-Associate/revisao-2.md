@@ -68,13 +68,60 @@ exemplo: É necessário reter arquivos durante um ano antes que possam ser delet
 
 
 #### EBS
+* dados são armazenados em volumes e blocos, onde os arquivos são dividos em blocos de tamanhos iguais, então quando são armazenados blocos de dados muito grandes os arquivos dão divididos em "pedaços" menores ou um tamanho fixado
+Cada bloco tem seu próprio endereço, mas não tem nenhuma metadado.
+
+Esse armazenamento pode ler ou escrever informação a nível de bloco, isso habilita maior performance de I/O
+
+
 É possível utilizar o EBS em modo "multi-attach" que permite acoplar um único volume IOPS SSD em várias instancias ec2
 
 
 
+#### s3
+* dados são armazenados como objetos, o s3 não sabe nada sobre o dado que está armazenando, única informação relevante os os metadados, são sets de chave/valor que descrevem o objeto e um identificador.
+dassa forma é possível encontrar osdados sem saber onde estão fisicamente.
+* não existe hierarquia entre aquivos e objetos
+*deve* ser usado quando se precisade um armazenamento de alta disponibilidade, altamente durável, exemplo: armazenamento de imagens, audio, vídeo, aquivamento de grandes arquivos, etc
+
+*não deve* ser usado para instalação de sistemas operacionais ou ser utilizado como volume onde é necessário uma alta performance de I/O (input/outout)
+
+Frequência de acesso determina o tipo do bucket, como os seguintes:
+s3 standard - default acesso + frequente.
+
+s3 standard infrequent Access - menor frequencia de acesso oferece menor preço comparado ao default, ideal para os tipos de dados que necessitam acesso sem uma regra de latência tão rigorosa.
+
+s3 one zone infrequent access - guarda os dados numa unica AZ, que reduz muito as custos comparados ao standard IA (infrequent access), ideal para dados que podem ser facilmente recriados, ou *dados que não sejam criticos*
+
+s3 intelligent tiering  - move automaticamente os arquivos de acesso frequente para o "não-frequente", ideal para dados que não tem uma frequencia de acesso definida ou que podem mudar.
+
+Glacier - tem um custo extremamente baixo, com os tempos de recuperação do dados entre min e horas, é ideal onde o acesso aos dados não é frequênte e quando o tempo de recuperação não é crítico.
+ Glacier instant retrieval - entrega o menor custo de armazenamento para dados de longo termo que são raramente acessados mas precisam de recuperação em milisegundos.
+
+ Glacier flexible retrival - ideal para dados que são acessados 1 ou 2 vezes no ano e podem ser recuperados de forma assíncrona.
+
+ Glacier deep archive - é o tipo de s3 de menor custo que suporta reteção de longa data e preservação digital dos dados, podem ser acessados 1 ou 2 vezespor ano, ate mais raramente.
+
+ s3 outposts - entrega armazenamento de objetos no ambiente on-premisses, utiliza de apis do s3 para ter uma única classe de s3.
+
+Lifecycle dos dados nos s3
+
+Outras features dos buckets s3:
+- Bucket policy - policies de recurso, utilizadas para politicas de acesso a nível de bucket
+- Bucket acl (access control list) - pode ser aplicada a nível de bucket ou de objeto dentro do bucket específico
+
+- IAM
+- Criptografia - dados em transito ou em repouso
+- MFA
+- Versionamento
+- Replicação de dados - habilidade de replicar dados entre buckets, normalmente recursos em regiões diferentes, também conhecida como "CRR - cross region replication", também é possível ter replicação de dados entre a mesma região como fonte e destino, mais conhecido como "SRR - same region replication"
+Replicação acontece de forma assíncrona.
+
+
 ### Kinesis
 Consegue processar e analisar dados de streaming (Dados de streaming são dados que são gerados continuamente por diferentes fontes. Esses dados devem ser processados ​​de forma incremental usando técnicas de processamento de fluxo sem ter acesso a todos os dados.).
-Com ele é possível ingerir dados em tempo real como video, áudio, logs de aplicação, dados de telemetria IoT, etc.
+Com ele é possível ingerir dados em tempo real como video, áudio, logs de aplicação, dados de 
+ IoT, etc.
 
 Data firehose: utilizado para fazer ETL de vários recursos da AWS e armazenar num s3 ou redshift.. mas não captura dados de streaming de vídeos como câmeras de sgurança.
 
