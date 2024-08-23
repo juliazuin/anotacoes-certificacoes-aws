@@ -86,6 +86,20 @@ dassa forma é possível encontrar osdados sem saber onde estão fisicamente.
 
 *não deve* ser usado para instalação de sistemas operacionais ou ser utilizado como volume onde é necessário uma alta performance de I/O (input/outout)
 
+Permissões no s3:
+ACLS>  
+- dar permissão de read/write para outras contas AWS
+- por padrão o dono dos objetos é o mesmo que o dono do bucket, e todas ACLs são desabilitadas, quando isso acontece o dono do bucket tem controle total e exclusivo sobre todos objetos ali, gerenciando acesso por policies de gerenciamentode acesso.
+- Bucket acl (access control list) - pode ser aplicada a nível de bucket ou de objeto dentro do bucket específico
+- para multiplos usuários ou grupos pode ser complexo de gerenciar
+
+Bucket policy>
+- Bucket policy - policies de recurso, utilizadas para politicas de acesso a nível de bucket
+- tem nível de permissionamento mais granular podendo ser uma conta aws, um endereço de IP ou uma hora do dia.
+- apenas o dono do bucket pode associar uma policy a ele
+- autoriza considerando os seguintes elementos requisitante, s3 actions, recursos e as condições da solicitação
+
+
 Frequência de acesso determina o tipo do bucket, como os seguintes:
 s3 standard - default acesso + frequente.
 
@@ -104,11 +118,14 @@ Glacier - tem um custo extremamente baixo, com os tempos de recuperação do dad
 
  s3 outposts - entrega armazenamento de objetos no ambiente on-premisses, utiliza de apis do s3 para ter uma única classe de s3.
 
-Lifecycle dos dados nos s3
+Lifecycle dos dados nos s3:
+regras de transição 
+regras de expiração
+
+storage class analyzer - consegue dar recomendações de lifecycle nos tiers `standard` e `standard infrequent access`, porém não funciona com o tier `one zone infrequent access` ou `Glacier`.
+Cria um report CSV que tem recomendações e estatisticas
 
 Outras features dos buckets s3:
-- Bucket policy - policies de recurso, utilizadas para politicas de acesso a nível de bucket
-- Bucket acl (access control list) - pode ser aplicada a nível de bucket ou de objeto dentro do bucket específico
 
 - IAM
 - Criptografia - dados em transito ou em repouso
