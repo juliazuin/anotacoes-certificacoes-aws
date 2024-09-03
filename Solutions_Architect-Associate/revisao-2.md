@@ -101,15 +101,16 @@ Bucket policy>
 
 
 Frequência de acesso determina o tipo do bucket, como os seguintes:
+##### Storage Classes
 s3 standard - default acesso + frequente.
 
-s3 standard infrequent Access - menor frequencia de acesso oferece menor preço comparado ao default, ideal para os tipos de dados que necessitam acesso sem uma regra de latência tão rigorosa.
+s3 standard infrequent Access (IA)- menor frequencia de acesso oferece menor preço comparado ao default, ideal para os tipos de dados que necessitam acesso sem uma regra de latência tão rigorosa como disaster recovery.
 
 s3 one zone infrequent access - guarda os dados numa unica AZ, que reduz muito as custos comparados ao standard IA (infrequent access), ideal para dados que podem ser facilmente recriados, ou *dados que não sejam criticos*
 
 s3 intelligent tiering  - move automaticamente os arquivos de acesso frequente para o "não-frequente", ideal para dados que não tem uma frequencia de acesso definida ou que podem mudar.
 
-Glacier - tem um custo extremamente baixo, com os tempos de recuperação do dados entre min e horas, é ideal onde o acesso aos dados não é frequênte e quando o tempo de recuperação não é crítico.
+Glacier - tem um custo extremamente baixo, com os tempos de recuperação do dados entre minutos e horas, é ideal onde o acesso aos dados não é frequênte e quando o tempo de recuperação não é crítico.
  Glacier instant retrieval - entrega o menor custo de armazenamento para dados de longo termo que são raramente acessados mas precisam de recuperação em milisegundos.
 
  Glacier flexible retrival - ideal para dados que são acessados 1 ou 2 vezes no ano e podem ser recuperados de forma assíncrona.
@@ -121,6 +122,15 @@ Glacier - tem um custo extremamente baixo, com os tempos de recuperação do dad
 Lifecycle dos dados nos s3:
 regras de transição 
 regras de expiração
+
+
+##### Storage Gateway
+Possibilita comunicação entre o ambiente on-premisses e a aws, podendo facilitar uma migração.
+- S3 file gateway 
+- FSx file gateway
+- volume gateway
+- tape gateway
+
 
 storage class analyzer - consegue dar recomendações de lifecycle nos tiers `standard` e `standard infrequent access`, porém não funciona com o tier `one zone infrequent access` ou `Glacier`.
 Cria um report CSV que tem recomendações e estatisticas
