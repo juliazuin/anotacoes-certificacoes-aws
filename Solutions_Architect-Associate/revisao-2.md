@@ -126,10 +126,22 @@ regras de expiração
 
 ##### Storage Gateway
 Possibilita comunicação entre o ambiente on-premisses e a aws, podendo facilitar uma migração.
+
+utilizações:
+migração
+modernização
+reinvenção continua
+
 - S3 file gateway 
-- FSx file gateway
-- volume gateway
-- tape gateway
+    armazenar arquivos com dados de aplicações e backup de imagens como objetos duráveis.
+    pode-se utilizar de qualquer classe de armazenamento (s3 standard, s3 standad-ia..), mas não Glacier
+- FSx file gateway 
+    compartilhamento de arquivos para windows file servers
+- Volume gateway
+    é possível realizar cópias point-in-time de volumes que serão armazenadas como EBS snapshots
+    2 modos de operar modo cache e modo `stored`
+- Tape gateway
+    
 
 
 storage class analyzer - consegue dar recomendações de lifecycle nos tiers `standard` e `standard infrequent access`, porém não funciona com o tier `one zone infrequent access` ou `Glacier`.
