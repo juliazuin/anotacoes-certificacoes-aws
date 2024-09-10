@@ -68,6 +68,9 @@ exemplo: É necessário reter arquivos durante um ano antes que possam ser delet
 
 
 #### EBS
+Armazenamento conectado à rede que tem baixa latência, funciona como um HD normal permitindo que instancias EC2 acessem como se fosse um disco local.
+Os dados persistem no EBS mesmo que a instância EC2 sera terminada.
+
 * dados são armazenados em volumes e blocos, onde os arquivos são dividos em blocos de tamanhos iguais, então quando são armazenados blocos de dados muito grandes os arquivos dão divididos em "pedaços" menores ou um tamanho fixado
 Cada bloco tem seu próprio endereço, mas não tem nenhuma metadado.
 
@@ -75,6 +78,32 @@ Esse armazenamento pode ler ou escrever informação a nível de bloco, isso hab
 
 
 É possível utilizar o EBS em modo "multi-attach" que permite acoplar um único volume IOPS SSD em várias instancias ec2
+
+casos de uso:
+- database
+- file storag 
+- big data and analytics
+- disaster recovery
+- devops e desenvolvimento de aplicações
+
+É possível conectar várias instâncias EC2 em um volume EBS, isso é limitado a alguns tipos de volume incluindo io1, io2 e st1. É necessário que o volume seja criado como "multi-attach", depois de criado não é possível convertê-lo.
+Os EBS multi-attach são limitados a uma AZ específica e não pode se conectar à instâncias em AZs diferentes.
+É possível aumentar/diminuir o tamanho dos volumes em tempo real, também é possível trocar de AZ sem ter que recriaro EBS e migrar os dados, alem disso é possível modificar configurações de IOPS e throughput sem desconectar o volume das instâncias.
+
+AWS lifecycle manager consegue automatizar a movimentação dos dados entre classes de armazenamento, incluindo s3 glacier.
+
+
+criptografia:
+dados em repouso dentro do volume
+todos dados movendo entre o volume e a instância
+todos snapshots que são criados do volume
+todos volumes criados a partir dos snapshots
+
+#### FSx
+tipo de armazenamento de alto desempenho
+Casos usos:
+home directories & compartilhamento corporativo
+web servers e gerenciamento de conteúdo
 
 
 
