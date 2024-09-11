@@ -67,6 +67,31 @@ Uma vault *lock* policy é uma política de acesso a qual é possível "trancar"
 exemplo: É necessário reter arquivos durante um ano antes que possam ser deletados, com a essa policy é possível negar a deleção desses arquivos ate que tenham existido por um ano. É possível testar a policy antes de aplicar o "lock, pois depois ela se torna imutável 
 
 
+#### AWS Backup
+Serviço gerenciado que possibilita a centralização e automação de proteção de dados nos serviços da aws sendo cloud ou on-premisses.
+
+features:
+1. visão centralizada do gerenciamento dos backups
+    1.1 gerencia policies de forma centralizada
+    1.2 console disponibiliza uma visão dos backups e logs (facilitando auditoria)
+2. backup baseado em policy
+    2.1 cria diferentes tipos de planos de backup dependendo dos requisitos de complience
+3. backups baseados em tags
+    3.1 pode ser utilizado para agrupar recursos e aplicar planos de backup nesse nível
+4. lifecycle de gerenciamento de recursos
+    4.1 lifecycle permite que os arquivos sejam movidos entre o armazenamento 
+    "warm" e o cold"
+5. backup cross-region (permite disaster recovery dos backups)
+6. Cross account feature, permite gerenciar os backups de todas as contas numa organization 
+    6.1 permite eliminar a duplicação de planos de backup entre contas aws da mesma organization
+    6.2 é necessário ter uma organização confgurado para utilizar cross acount (obviamente)
+7. backups incrementais, sendo o primeiro uma cópia total e todos proximos apenas os dados que mudaram são copiados.
+    7.1 ajuda a diminuir o custo
+8. monitoração integrada com cloudwatch, eventbridge, cloudtrail e SNS
+9. todos backups são imutáveis
+
+
+
 #### EBS
 Armazenamento conectado à rede que tem baixa latência, funciona como um HD normal permitindo que instancias EC2 acessem como se fosse um disco local.
 Os dados persistem no EBS mesmo que a instância EC2 sera terminada.
