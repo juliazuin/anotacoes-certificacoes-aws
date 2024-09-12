@@ -89,10 +89,10 @@ FTPS - File Transfer Protocol over SSL - é uma extensão do FTP, como ele utili
 
 
 ### Outposts
-Permite estender e operar serviços nativos da AWS no ambiente on-premisses.
+Permite estender e operar serviços nativos da AWS no ambiente on-premisses ou qualquer serviço de borda (edge).
 É possível rodar alguns serviços da aws localmente e integrar com outros vários serviços disponíveis na região.
 
-Outposts é compatível com o ECS sendo ideal para workloads que necessitem de baixa latência e que necessitem proximidade com dadose/ou aplicações do ambiente on-premisses.
+Outposts é compatível com o ECS sendo ideal para workloads que necessitem de baixa latência e que necessitem proximidade com dados e/ou aplicações do ambiente on-premisses.
 ECS tipo Fargate não está disponpível com Outposts.
 
 
@@ -137,11 +137,16 @@ Integra recomendações personalizadas para cada usuário em websites, aplicaç�
 É um banco de dados que utiliza dados tipo `time-series`, que são bancos de dados baseados em tempo.
 
 
-### QuickSight
+### Analytics
+#### QuickSightanaly
 Dashboard like, serviço para business analytics.
 É possível conectar os seguintes serviços ao QuickSight:
 RDS, aurora, redshift, athena e s3.
 É possível também inputar arquivos de excel, conectar a bancos de dados on-premisses (SQL server, MySQL e PostGreSQL), importar dados de um SaaS (tipo salesforce)
+
+
+#### Lake Formation
+Centraliza a governança, segurança e compartilhamento global dos dados para análise e machine learning.
 
 
 ### Metrics

@@ -133,6 +133,9 @@ web servers e gerenciamento de conteúdo
 
 
 #### s3
+> CORS: Cross origin resources sharing -> permite interação de uma aplicação web em um domínio a ter acesso a recursos em outro domínio.
+
+
 * dados são armazenados como objetos, o s3 não sabe nada sobre o dado que está armazenando, única informação relevante os os metadados, são sets de chave/valor que descrevem o objeto e um identificador.
 dassa forma é possível encontrar osdados sem saber onde estão fisicamente.
 * não existe hierarquia entre aquivos e objetos
@@ -254,3 +257,27 @@ Lambda
 S3 Glacier
 API Gateway
 CloudWatch logs
+
+
+### System manager
+Hub operacional para aplicações e recursos e uma solução de gerenciamento end-to-end ambientes híbridos e multicloud.
+Usado para ver e controlar infra
+
+
+features:
+1. Consegue escanear os nodes e detectar violações de políticas e/ou pode tomar alguma ação para que os recursos se mantenham compliance e seguros.
+2.Tem suporte pra instâncias ec2, aparelhos de borda (edge), servidores on-premisses e máquinas virtuais assim como VMs de outros ambientes de cloud.
+3. Suporta os seguintes OS:
+windows server, macOS, raspberry PI OS e múltiplas distribuições de linux.
+4. É possível agrupar recursos da aws utilizando a mesma tag e então monitorar e realizar tshoot vendo os dados como se fosse um resource group.
+
+Competências:
+1. Operations management -> gerencia os recursos da aws, incluindo incidentes, trusted advisor, cloudwatch dashboards;
+
+2. Aplication management -> gerencia apps rodando na aws, como resource groups application confgurations, parameter store;
+
+3. Change management -> tomar ações ou modificar recursos da aws, incluindo change manager, Automation, change calendar, maintanace windows;
+
+4. Node management -> gerenciar compliance dos nodes, gerenciar uma "frota" de nodes como session manager, run command, state manager, patch manager, distributor;
+
+5. Shared resources -> utilizar o system manager document para definir as ações do system manager.
