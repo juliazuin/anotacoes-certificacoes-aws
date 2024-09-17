@@ -181,3 +181,16 @@ Bridge mode: utiliza uma ponte de rede virtual que cria uma camada entre o host 
 
 AWSVPC mode: cria e gerencia uma Elastic Network Interface (ENI) para cada task e cada uma dessas tasks recebem seu próprio IP privado dentro da VPC
 
+
+### Cloud Formation
+IaC - infraestructure as a code
+Seções de um template de stack cloudformation:
+- Format version - contém a data da versão
+- Description - descrição da stack em uma frase
+- Metadata - contém dados adicionas sobre a stack
+- Resources(*obrigatório*) - set de recursos que serão criados 
+- Paramenter - set de valores customizados
+- Mappings - contém pares de chave:valor 
+- Conditions - define as circunstâncias que os recursos serão criados
+- Transform - especifica processos macro no template
+- Outputs - valores que são retornados após a execução e podem ser usados em outras stacks como input.
