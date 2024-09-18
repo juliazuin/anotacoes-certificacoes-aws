@@ -69,12 +69,39 @@ Agent-based discovery -> é utilizado para coletar dados de hosts que não sejam
 Agentless discovery -> é utilizado somente para coletar dados de hosts que **sejam** do tipo VMWare
 
 
-### Security
-* GuardDuty -  protege contra o uso de crendenciais comprometidas ou acesso não usual no s3, mas não escaneia o conteúdo do bucket s3
-* Detective - analisa e visualiza informações de segurança dos serviços como o Guard Duty, Macia e Security Hub para resgatar a causa raiz de um potencial problema de segurança.
-* Macie - utiliza machine learning e correspondência de padrões  para discobrir monitorar e proteger dados sensíveis nos Buckets s3 
-* Inspector- Avalia vulnerabilidade de software ou exposições de rede nos EC2.
+## Security
+### GuardDuty
+protege contra o uso de crendenciais comprometidas ou acesso não usual no s3, mas não escaneia o conteúdo do bucket s3
 
+
+### Detective
+analisa e visualiza informações de segurança dos serviços como o Guard Duty, Macie e Security Hub para resgatar a causa raiz de um potencial problema de segurança.
+
+
+### Macie
+utiliza machine learning e correspondência de padrões  para discobrir monitorar e proteger dados sensíveis nos Buckets s3 
+
+
+### Inspector
+Avalia vulnerabilidade de software ou exposições de rede nos EC2.
+Teste acessibilidade de instâncias EC2 e estado de segurança de aplicações que rodam nessas instâncias;
+Avalia aplicações em exposição, vulnerabilidades e desvios de boas práticas.
+Faz um relatório de assessment com uma lista detalhada organizada por nível de seridade.
+
+Também pode automatizar achados de vulnerabilidade em pipelines de ci/cd
+
+Para uma avalição de "host"
+Deve ter um agent instalado nas instâncias ec2 que monitora o comportamento dela incluindo monitorações de redes, file system e atividade de processos coletando uma grande quantidade de dados de configuração e comportamento (telemetry).
+
+para avaliação de redes, o agent não é necessário.
+
+### Shield
+Gerencia a proteção de Distributed definal of service (DDoS), provendo detecção dinâmica e mitigações automáticas que minimizam tempo de inatividade e latência da aplicação.
+-> Standard: defende as aplicações contra os ataques DDoS mais comuns na camada 3 e 4 (redes e transporte)
+-> Advanced: EC2, ELB, Cloud Front, Global accelerator e Route53. Possuí integração com o AWS WAF
+
+### WAF
+servicço Web application firewall monitora requisições direcionadas ao API gateway/cloudfront/ALB, é possível proteger esses recursos baseados em condições específicas como endereço de IP que a requisição veio.
 
 ### AWS Transfer family
 Oferecesuporte para transiferência de arquivos com SFTP, AS2, FTPS e FTP diretamente para o s3 ou EFS.
