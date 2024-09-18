@@ -194,3 +194,28 @@ Seções de um template de stack cloudformation:
 - Conditions - define as circunstâncias que os recursos serão criados
 - Transform - especifica processos macro no template
 - Outputs - valores que são retornados após a execução e podem ser usados em outras stacks como input.
+
+
+### Key Management Service - KMS
+Algumas features:
+Gerencia chaves criptografadas facilitando proteção de dados porchaves simétricas e assimétricas.
+Pode ser integrado ao cloudtrail para auditoria e compliance.
+Também possuem `key policies` que dão acesso granular determinando usuários, ações, operações e condições às chaves.
+Se integra com o Cloud HSM para segurança avançada das chaves
+Suporta replicação multi-região para redundancia.
+
+
+Criptografia (definição): processo de converter um plaintext (dados legíveis) em ciphertext (dado codificado) utilizando um algorítimo e uma chave de criptografia.
+
+Symmetric encryption (AKA Secret-key encryption) - utiliza a mesma chave para criptografar e descriptografar o dado. O tamanho da chave implica em maior segurança.
+
+Asymmetric Encryption (AKA Public-key encryption) - possuí 2 chaves sendo uma pública para criptografar e uma privada para descriptografar, que garante troca segura das chaves e assinaturas digitais.
+
+Hybrid encryption - combinação dos dois métodos anteriores, utiliza uma symmetric key para criptografar o dado e então faz a criptografia da própria chave utilizando método assímetrico utilizando a chave pública.
+
+2 tipos de chaves suportadas pelo KMS:
+AWS managed keys - chaves geradas peloas kms, podem ser utilizadas para criptografar dados de serviços como s3, EBS e RDS, eliminando a preocupação do gerenciamento de chaves enquanto ainda mantém o controle das chaves.
+
+Customer Managed keys - essas são chaves que são controladas no KMS permitindo gerenciamento de lifecycle abrangente, key rotation, auditoria e access control. Garantindo a segurança nos serviços AWS e aplicações externas também.
+    -> symmeetric cmks 
+    -> asymmetric cmks
