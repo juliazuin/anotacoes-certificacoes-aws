@@ -79,7 +79,8 @@ analisa e visualiza informações de segurança dos serviços como o Guard Duty,
 
 
 ### Macie
-utiliza machine learning e correspondência de padrões  para discobrir monitorar e proteger dados sensíveis nos Buckets s3 
+utiliza machine learning e correspondência de padrões para descobrir, monitorar e proteger dados sensíveis nos Buckets s3
+Consegue identificar buckets que têm excesso de permissões ou estão descriptografados.
 
 
 ### Inspector
@@ -221,6 +222,13 @@ Seções de um template de stack cloudformation:
 - Conditions - define as circunstâncias que os recursos serão criados
 - Transform - especifica processos macro no template
 - Outputs - valores que são retornados após a execução e podem ser usados em outras stacks como input.
+
+Helper scriptssignal
+São scripts em python que podeser usados para instalar softwar e iniciar serviços numa EC2 que é criada a partir de uma stack.
+- cfn-init > recupera a interpreta metadata dos recursos, instala pacotes, cria arquios e inicia serviços;
+- cfn-signal > utilizado como "sinal" com uma "Creationpolicy" ou "WaitCondition" para que seja possível sincronizar outros recursos da stack quando o pré-requisito é o recurso ou a aplicação estar em status "pronto";
+- cfn-get-metadata > recupera metadata de um recurso ou "path" para uma chave específica;
+- cfn-hup > utilizado para verificar atualização nos metadados e executar hooks customizados quando mudanças são detectadas.
 
 
 ### Key Management Service - KMS
