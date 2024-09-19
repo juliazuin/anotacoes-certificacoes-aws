@@ -281,3 +281,19 @@ Competências:
 4. Node management -> gerenciar compliance dos nodes, gerenciar uma "frota" de nodes como session manager, run command, state manager, patch manager, distributor;
 
 5. Shared resources -> utilizar o system manager document para definir as ações do system manager.
+
+
+## Network
+### VPC Peering
+É a conexão de redes entre duas VPCs que permitem que exista trágfego entre elas utilizando IPv4 e IPv6
+
+### VPC Endpoints
+São "aparelhos" virtuais que permitem conexão privada com os servços (suportados) da aws sem necessitar de um internet gateway, nat device, vpn connection ou aws direct connect.
+
+VPC-e não necessita de ips púbicos para se comunicar com os serviços e a comunicação nunca deixa a rede da aws.
+
+-> interface endpoint: endpoint elástico de interface que possuí um ip privado que serve como ponto de entrada como Cloudfront, cloudwatch..
+-> Gateway endpoint: um gateway que é um alvo específico na route table como dynamodb, s3..
+
+
+revisar databases

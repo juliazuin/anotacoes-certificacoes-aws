@@ -61,6 +61,7 @@ https://aws.amazon.com/blogs/security/three-most-important-aws-waf-rate-based-ru
 ### Route 53
 É possível configurar health check do route 53 para verificar configurações ativo-ativo e ativo-passivo.
 
+## Migration
 ### Application Discovery Service
 Coleta e apresenta a data para que seja possivel entender a configuração, uso e comportamento dos servidores no ambiente on-premisses. Dados obtidos são retidos no Application Disacovery Service e então pode ser taggeado e agrupado para facilitar um plano de migração para a cloud.analysis tools.
 
@@ -68,6 +69,9 @@ Agent-based discovery -> é utilizado para coletar dados de hosts que não sejam
 
 Agentless discovery -> é utilizado somente para coletar dados de hosts que **sejam** do tipo VMWare
 
+
+### Application MIgration Service
+Simplifica a migração de saplicação, workload ou banco de dados para aws, podendo ser a trasnferência do ambiente on-premisses para aws, entre regiões ou zonas de disponibilidade e também cross cloud sendo públicas ou privadas.
 
 ## Security
 ### GuardDuty
