@@ -122,4 +122,4 @@ Enquanto ativa a aplicação guarda todos dados em memória ou numa "session sto
 Session data incluí dados do perfil do usuário, dados personaliados, recomendações, promoções direcionadas e descontos. 
 
 
-
+### Analytics
