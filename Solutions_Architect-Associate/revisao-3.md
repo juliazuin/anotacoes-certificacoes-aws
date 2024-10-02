@@ -178,3 +178,7 @@ SPICE - Super fast, Parallel, in memory Calculations Engine
 Analytics
 SDKs
 
+
+### Front-end
+#### AppSync
+Utiliza GraphQ linguagem de dados que habilita puxar os dados de uma forma estruturada, sendo possível realizar queries somente com os dados/campos necessários.
