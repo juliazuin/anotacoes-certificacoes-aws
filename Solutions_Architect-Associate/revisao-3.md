@@ -123,3 +123,58 @@ Session data incluí dados do perfil do usuário, dados personaliados, recomenda
 
 
 ### Analytics
+#### Redshift
+Data warehouse gerenciado desenhado para queries de alta performance e análise de grandes datasets utilizando query SQL, tem suporte para altos níveis de concorrência.
+
+Componentes:
+1. Nodes
+1.1 Clusters: conjunto de 1 ou mais compute nodes
+1.2 Leader node: gerencia comunicação com o cliente e coordena comunicação entre os compute nodes, delegando tarefas.
+1.3 Compute node: executam tarefas e enviam resultados para agregar no resultado final, cada node tem sua própria configuração de capacity.
+
+2. Storage
+2.1 redshift managed store
+2.2 bancos de dados
+
+
+#### EMR
+Elastic Map Resources
+Permite a execução de frameworks de bigdata como apache Spark e apache hadoop, que faclita a analise de grandes conjuntos de dados. Consegue converter e transferir os dados para várias soluções de banco e storage tipo dynamoDB e s3.
+
+Layers:
+* Storage: HSFS (hadoop distributed file system), EMRFS (EMR file system) e local file system.
+* Cluster resource management: responsável pelo gerenciamento de recursos no cluster e agendamento de atividades de processamento de dados.
+* Data processing framework: hadoop mapreduce, apache spark
+* Application e programs: ajuda no processamento e gerenciamento de conuntos de bigdata tipo algoritimos de machine learning
+
+#### Kinesis
+Serviço gerenciado para ingstão, processamento e análise de streaming em tempo real e em escala, podendo coletar, armazenar e analisar grandes quantidades de dados gerados continuamente por uma vasta variadade de serviços incluindo aplicações, websites, aparelhos IoT...
+
+Features:
+* Ingestao de dados
+* Processamento de dados
+* Armazenamento de dados
+* Analise em tempo-real
+* Resisliência e escalabilidade
+* segurança e complience
+
+Casos de uso:
+1. Construção de aplicações em tempo-real, pode ser utilizada como detector de fraudes, live leaderboards e monitoramento de aplicações 
+2. Evolução de batch para análise em tempo-real.
+3. Análise de aparelhos de IoT
+4. Construção de aplicações de análise de vídeo
+
+#### Glue
+Serviço de integração de dados **serverless** e ETL (extract, transform, load)
+
+
+#### QuickSight
+Provê dashboards iterativos conectando com dados em qualquer lugar incluindo serviços nativos da aws, excel, source de big data e bancos de dados terceiros sendo da cloud ou on-premisses.
+
+Componentes:
+Designer
+Server
+SPICE - Super fast, Parallel, in memory Calculations Engine
+Analytics
+SDKs
+
