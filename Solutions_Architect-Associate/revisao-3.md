@@ -113,6 +113,9 @@ Suporta dois tipos de protocolos `ìn-memory`:
 
     casos de uso: cargas de trabalho que não somente usem armazenamento em cache, mas necessitem de manipulação de estrutura de dados, persistência de dados  ou alta disponibilidade.
 
+#### Neptune
+Banco de dados gerenciado serverless que faz analytics com gráficos, podeser utilizado para buscar e realizar querys em bilhões de relacionamentos
+
 
 ##### Session Store
 É possível utilizar o elasticache redis para sessões.
@@ -181,4 +184,52 @@ SDKs
 
 ### Front-end
 #### AppSync
-Utiliza GraphQ linguagem de dados que habilita puxar os dados de uma forma estruturada, sendo possível realizar queries somente com os dados/campos necessários.
+Conecta aplicações aos dados e eventos.
+Utiliza GraphQ e APIS Pub/Sub (publish/subscribe (publicação/subscrição)) linguagem de dados que habilita puxar os dados de uma forma estruturada, sendo possível realizar queries somente com os dados/campos necessários.
+
+
+### File System
+POSIX é um padrão definido pelo IEEE (Institute of Electrical and Electronics Engineers) que descreve uma interface de sistema operacional comum. Ele foi criado para garantir portabilidade entre sistemas operacionais, fornecendo um conjunto de APIs que garantem que programas escritos para um sistema compatível com POSIX possam ser facilmente adaptados para outros sistemas compatíveis.
+
+É a forma que arquivos e diretórios devem ser criados, manipulados e destruídos.
+
+Features:
+sistema de arquivos
+processos
+sinais
+threads
+manipulação de dispositivos de entrada e saída (I/O)
+
+#### FSx for Lustre
+É utilizado para workloads q necessítem de velocidade como machine learning, HPC (high performance computing), processamento de vídeos e modelos financeiros.
+
+Existem dois tipos de opções de deploy:
+Scratch - Desenhadas para armazenamento temporario e processamento de dados de curta duração, nesse modo o dado não persiste e não é replicado em caso de falha do file system
+
+Persistent - desenhado para armazenamento de longa duração, altamente disponível os dados são automaticamente replicados dentro da mesma AZ
+
+
+### Storage Gateways
+Utilizado para compatibilidade da cloud com sistemas ja existentes utlizando NFS, SMB, iSCSI ou iSCSI-VTL
+
+#### s3 File Gateway
+Interface que possibilita armazenar arquivos como objetos no s3 utilizando protocolos padrão NFS e SMB, sendo possível acessar os arquivos do data center ou de uma EC2, ou também pode ser acessados diretamente no s3.
+
+Pode ser utilizado para backup de dados on-premisse (SQL server e oracle DB e logs), para workloads de cloud hibridas
+
+#### FSx file gateuway
+Acessar e armazenar dados com 100% de compatibilidade com windows 
+pode ser usado para aplicações de negório baseadas em arquivos(on-premisses) e workloads tipo compartilhamento de arquivos com usuários ou grupos, web content management e media workflows.
+
+
+### Backup
+Serviço gerenciado que centraliza e automatiza proteção de dados entre serviços da AWS na cloud ou on-premisses, sendo possível configurar policies de backup e monitrar atividades dos recursos.
+Features:
+Gerenciamento de backups centralizados
+backup baseado em policies
+backup baseado em tags 
+policies de gerenciamento de ciclo de vida (lifecyle)
+backup cross-region
+gerenciamento e backup cross-account 
+auditoria e reports
+backups incrementais
