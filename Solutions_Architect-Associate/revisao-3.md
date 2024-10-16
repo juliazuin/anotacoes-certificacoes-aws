@@ -97,6 +97,16 @@ Somente a instância primária performa ação de escrita no banco.
 
 Não é possível realizar ações de stop/start nas instâncias de Aurora Global individualmente.
 
+##### Utilização do RDS-aurora com autenticação via IAM
+Toda autenticação do Banco de dados **aurora** é gerenciada pelo plugin "AWSAuthenticationPlugin"
+que se integra perfeitamente com o IAM. 
+É possível criar usuários com o seguinte comando
+````sh
+CREATE USER 'jane_doe' IDENTIFIED WITH AWSAuthenticationPlugin AS 'RDS'; 
+```` 
+IDENTIFIED WITH permite que o banco de dados utilize o plugin para autenticar a conta 
+jane_doe. o "AS 'RDS'" é o tipo de autenticação.
+
 
 #### Elasticache
 Guarda dados críticos em memória, provendo uma baixa latencia de dados que não são modificados com muita frequência.
@@ -114,7 +124,15 @@ Suporta dois tipos de protocolos `ìn-memory`:
     casos de uso: cargas de trabalho que não somente usem armazenamento em cache, mas necessitem de manipulação de estrutura de dados, persistência de dados  ou alta disponibilidade.
 
 #### Neptune
-Banco de dados gerenciado serverless que faz analytics com gráficos, podeser utilizado para buscar e realizar querys em bilhões de relacionamentos
+Banco de dados gerenciado serverless que faz analytics com gráficos, pode ser utilizado para buscar e realizar querys em bilhões de relacionamentos.
+
+#### DocumentDB
+Banco de dados gerenciado que tem suporte nativo para documentos JSON
+casos de uso:
+Armazenamento e query de dados de gerenciamento de conteúdo > melhorando a experiência 
+do usuário
+gerenciamento de recomendações para clientes
+
 
 
 ##### Session Store
@@ -233,3 +251,34 @@ backup cross-region
 gerenciamento e backup cross-account 
 auditoria e reports
 backups incrementais
+
+
+### System manager
+#### Application manager
+No Application Manager uma **aplicação** é um grupo lógico de 
+recursos da AWS que serão operados como um só, esse grupo pode representar diferentes versões
+de uma aplicação, ambientes de desenvolvedores.
+Features:
+- Importação dos recursos crianos da aws automaticamente
+- Criação e edição de stacks e templates de cloudformation
+- Visualização de informação sobre as instâncias num contexto de aplicação
+- Visualização de metricas e alarmes para aplicações ou Clusters
+- Visualização de dados de log de uma aplicação
+
+### Migração
+#### DataSync
+É uma ferramenta de transferẽncia e discovery de dados que simplifica migração do dados.
+Com ele é possível transferir dados de instâncias on-premisses para a cloud, os seguintes
+storage systems estão disponíveis:
+Network file system
+Server message block
+Hadoop Distributed file systems
+Object storage
+
+E o datasync trabalha com os seguintes storage services da AWS
+s3 
+EFS
+FSx for widows
+FSx for Lustre
+FSx for openZFS
+FSx for NetApp ONTAP
